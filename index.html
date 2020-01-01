@@ -12,15 +12,16 @@
 
     <script>
         addEventListener('load',async()=>{
-            let  sw=await navigator.serviceWorker.register('./sw.js')
-            console.log(sw)
+            let  sw=await navigator.serviceWorker.register('./sw.js');
+            console.log(sw);
         })
         async function subscribe(){
             let  sw=await navigator.serviceWorker.ready;
             let push= await sw.pushManager.subscribe({
                 userVisibleOnly:true,
-                applicationServerKey:'BNKv8KjQUzW-GSm02DTjusBK4dHz3qlcWoFRtQAlp11nWyVbhPaEs8x7wH77SJlHbpXyukT6ZvyGWmkDPQ88jYs'
-            })
+                applicationServerKey:
+                'BNKv8KjQUzW-GSm02DTjusBK4dHz3qlcWoFRtQAlp11nWyVbhPaEs8x7wH77SJlHbpXyukT6ZvyGWmkDPQ88jYs'
+            });
             console.log(JSON.stringify(push));
         }   
     </script>
